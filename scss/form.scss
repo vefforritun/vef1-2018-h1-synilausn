@@ -1,0 +1,89 @@
+@import "config";
+
+.form {
+
+  margin-bottom: $gutter * 2;
+
+  &__row {
+    @include row;
+
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    @include columns(12);
+
+    margin-bottom: $gutter;
+
+    @media (min-width: 800px) {
+      @include columns(6);
+    }
+
+    @media (min-width: $max-width) {
+      @include columns(4);
+      @include offset-left(2);
+
+      &:last-child {
+        @include offset-left(0);
+      }
+    }
+  }
+
+  &__fieldset {
+    border: 0;
+  }
+
+  &__legend {
+    margin-bottom: $gutter;
+
+    font-family: $font-heading;
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  &__field {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: $gutter;
+
+    font-size: 1.125rem;
+
+    @media (min-width: 800px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__label {
+    flex: 0 1 150px;
+  }
+
+  &__input,
+  &__select {
+    flex: 1;
+
+    padding: 5px;
+
+    font-family: $font-main;
+    font-size: 1.125rem;
+
+    border: 1px solid #000;
+    border-radius: 3px;
+  }
+
+  &__expiry {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__expiry &__label,
+  &__expiry &__select {
+    flex: 0;
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: center;
+  }
+}

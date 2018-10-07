@@ -1,0 +1,55 @@
+@import "config";
+
+.section {
+  @include row;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: $gutter;
+
+  @media (min-width: 800px) {
+    margin-bottom: $gutter * 2;
+  }
+
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  &__title {
+    margin-bottom: $gutter * 2;
+
+    font-family: $font-heading;
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  &__col {
+    @include columns(12);
+
+    @media (min-width: 800px) {
+      @include columns(6);
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    padding-left: $gutter;
+    margin-bottom: $gutter * 2;
+
+    font-size: 1.5rem;
+
+    flex-direction: column;
+
+    @media (min-width: $max-width) {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: $gutter * 2;
+  }
+}

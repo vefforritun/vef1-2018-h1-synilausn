@@ -1,0 +1,19 @@
+@import "config";
+
+.cart {
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (max-width: $max-width - 1) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  &__title {
+    margin-bottom: $gutter;
+
+    font-family: $font-heading;
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+}
